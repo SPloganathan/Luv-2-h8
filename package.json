@@ -1,0 +1,35 @@
+{
+  "name": "luv-2-h8",
+  "version": "1.0.0",
+  "description": " Our program will give a platform to haters of all kinds to join together and do what they love most, hate. Users will be able to make blog-like posts that can include images and locations in order to best represent their hatred. Every hater will have to make an account in order to make posts as well as “hate” them (our version of liking posts).",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SPloganathan/luv-2-h8.git"
+  },
+  "keywords": [
+    "luv-2-h8",
+    "hate",
+    "love"
+  ],
+  "author": "Sakthipriya Loganathan, Maya Roe, Elena Chernousova, Jennifer Gutierrez Manjares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SPloganathan/luv-2-h8/issues"
+  },
+  "homepage": "https://github.com/SPloganathan/luv-2-h8#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "passport-http-bearer": "^1.0.1",
+    "sequelize": "^6.3.5"
+  }
+}
