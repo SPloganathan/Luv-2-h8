@@ -9,7 +9,7 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("logInSignUpView");
 });
 
 // below route will clear the cookie and logout the user

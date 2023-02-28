@@ -13,17 +13,20 @@
         Luv2H8!
       </h1>
       <nav>
-        <button class="btn" id="logout"> + New Post </button>
+        <button class="btn" id="new-post"> + New Post </button>
       </nav>
       <nav>
-        <a href="/category" class="btn" id="logout"> Category </a>
+        <a href="/category" class="btn" id="category"> Category </a>
       </nav>
+
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
 
         <nav>
           <button class="btn" id="logout">logout</button>
         </nav>
+      {{else}}
+        <nav><a href="/login" class="btn" id="login"> Login </a></nav>
       {{/if}}
     </header>
 
