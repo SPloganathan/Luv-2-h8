@@ -1,3 +1,5 @@
+const { Post, Business, User, Category } = require("../models");
+
 const router = require("express").Router();
 
 //  renders the login view
@@ -7,7 +9,7 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("logInSignUpView");
 });
 
 // below route will clear the cookie and logout the user
@@ -18,6 +20,53 @@ router.get("/logout", (req, res) => {
     });
   } else {
     res.redirect("/");
+  }
+});
+
+// this will render the homepage view
+router.get("/", async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Business,
+          include: [Category],
+        },
+      ],
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render("homePage", {
+      posts,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// this is going to render the category view when category button is pressed
+router.get("/category", async (req, res) => {
+  try {
+    const categoryData = await Category.findAll();
+
+    const categories = categoryData.map((category) =>
+      category.get({ plain: true })
+    );
+
+    res.render("categoryView", {
+      categories,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

@@ -17,7 +17,7 @@ Post.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     like_count: {
@@ -58,12 +58,12 @@ Post.init(
         key: "id",
       },
     },
-    created_at: {
-      type: DataTypes.DATE, 
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-    
+    // created_at: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    //   defaultValue: DataTypes.NOW
+    // },
+
     // category_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
