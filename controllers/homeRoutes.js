@@ -70,4 +70,61 @@ router.get("/category", async (req, res) => {
   }
 });
 
+// this is going to render the postsbased on the category name when category card button is pressed
+
+router.get("/categoryPosts/:id", async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Business,
+          include: [Category],
+          where: { category_id: req.params.id },
+        },
+      ],
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render("focusedCategoryView", {
+      posts,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// the below route will render the focused category view based on the user ID
+router.get("/myPosts/:id", async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: { user_id: req.params.id },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Business,
+          include: [Category],
+        },
+      ],
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render("focusedCategoryView", {
+      posts,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

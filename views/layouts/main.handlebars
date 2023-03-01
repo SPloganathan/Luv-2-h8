@@ -21,10 +21,13 @@
 
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
-
+        <nav>
+          <a href="/myPosts/{{user_id}}" class="btn" id="my-posts">My Posts</a>
+        </nav>
         <nav>
           <button class="btn" id="logout">logout</button>
         </nav>
+
       {{else}}
         <nav><a href="/login" class="btn" id="login"> Login </a></nav>
       {{/if}}
