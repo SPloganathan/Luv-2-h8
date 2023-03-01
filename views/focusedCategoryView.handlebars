@@ -1,0 +1,26 @@
+{{#each posts as |post|}}
+
+  <header class="display-flex justify-space-between align-center p-2">
+    <h2>
+      {{post.business.name}}
+      --
+      {{post.business.category.name}}
+    </h2>
+    <h2>
+      {{post.title}}
+    </h2>
+    <h3> CreatedBy {{post.user.name}}</h3>
+    <h3> at {{post.created_at}}</h3>
+  </header>
+
+  <div class="row align-left mb-5">
+    <div class="col-md-12">
+      <h2> {{post.description}}</h2>
+      {{! , , , , like, dislike, images }}
+    </div>
+    <div class="col-md-6">
+      <h4> like {{post.like_count}}</h4>
+      <h4> dislikes {{post.dislike_count}}</h4>
+    </div>
+  </div>
+{{/each}}
