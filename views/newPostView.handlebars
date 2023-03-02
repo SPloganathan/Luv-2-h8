@@ -1,7 +1,13 @@
-<label for="category">Choose a Category:</label>
 {{! below needs to be always kept as dropdown option for category }}
-<select name="category" id="category">
+<select name="category" id="category-select">
+  <option value="">Select a Category</option>
   {{#each categories as |category|}}
     <option value="{{category.id}}">{{category.name}}</option>
   {{/each}}
 </select>
+
+<select name="business" id="business-select">
+  <option value="">Select a Business</option>
+</select>
+
+<script src="/js/post.js"></script>
