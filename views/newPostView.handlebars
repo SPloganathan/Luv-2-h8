@@ -1,4 +1,13 @@
-{{#each categories as |category|}}
-  {{! below needs to be changed as dropdown option for category }}
-  <div>{{category.name}}</div>
-{{/each}}
+{{! below needs to be always kept as dropdown option for category }}
+<select name="category" id="category-select">
+  <option value="">Select a Category</option>
+  {{#each categories as |category|}}
+    <option value="{{category.id}}">{{category.name}}</option>
+  {{/each}}
+</select>
+
+<select name="business" id="business-select">
+  <option value="">Select a Business</option>
+</select>
+<a href="/newBusiness">Add New Business</a>
+<script src="/js/post.js"></script>

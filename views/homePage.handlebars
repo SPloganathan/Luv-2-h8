@@ -10,7 +10,7 @@
       {{post.title}}
     </h2>
     <h3> CreatedBy {{post.user.name}}</h3>
-    <h3> at {{post.created_at}}</h3>
+    <h3> at {{format_date post.createdAt}}</h3>
   </header>
 
   <div class="row align-left mb-5">
