@@ -128,7 +128,7 @@ router.get("/myPosts/:id", async (req, res) => {
   }
 });
 
-// the below route will render the focused category view based on the user ID
+// the below route will render the 'add new post' page
 router.get("/newPost", async (req, res) => {
   try {
     const categoryData = await Category.findAll();
@@ -136,6 +136,23 @@ router.get("/newPost", async (req, res) => {
     const categories = categoryData.map((post) => post.get({ plain: true }));
 
     res.render("newPostView", {
+      categories,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// the below route will render the 'add new business' page
+router.get("/newBusiness", async (req, res) => {
+  try {
+    const categoryData = await Category.findAll();
+
+    const categories = categoryData.map((post) => post.get({ plain: true }));
+
+    res.render("addingBusiness", {
       categories,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,

@@ -1,0 +1,6 @@
+<select name="category" id="category-select">
+  <option value="">Select a Category</option>
+  {{#each categories as |category|}}
+    <option value="{{category.id}}">{{category.name}}</option>
+  {{/each}}
+</select>
