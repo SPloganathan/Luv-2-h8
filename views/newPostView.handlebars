@@ -1,4 +1,9 @@
 {{! below needs to be always kept as dropdown option for category }}
+<form class="box" id="post-form">
+  <div class="field">
+
+  </div>
+
 <select name="category" id="category-select">
   <option value="">Select a Category</option>
   {{#each categories as |category|}}
@@ -10,4 +15,28 @@
   <option value="">Select a Business</option>
 </select>
 <a href="/newBusiness">Add New Business</a>
+
+<div class="field">
+    <label for="title" class="label ">Title</label>
+    <div class="control">
+      <input id="title" name="title" class="input" type="text" placeholder="Title">
+    </div>
+</div>
+
+<div class="field">
+    <label for="description" class="label ">Description</label>
+    <div class="control">
+      <input id="description" name="description" class="input" type="text" placeholder="Your post here">
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="file" class="form-label">Add an Image</label>
+    <input class="form-control" type="file" id="file" name="file" />
+</div>
+
+<button type="submit" class="button is-danger">Submit</button>
+</form>
+
 <script src="/js/post.js"></script>
+
