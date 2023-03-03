@@ -9,5 +9,14 @@
 <select name="business" id="business-select">
   <option value="">Select a Business</option>
 </select>
+{{! placeholder for rendering google map, dont remove it }}
+<div style="width:500px;height:500px" id="map"></div>
+
 <a href="/newBusiness">Add New Business</a>
+
 <script src="/js/post.js"></script>
+{{! google map scripts }}
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByDpfc05WnQsZtGP-x0hLiSsud67guy08&callback=initMap&v=weekly"
+  defer
+></script>
