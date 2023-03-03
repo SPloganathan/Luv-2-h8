@@ -29,3 +29,40 @@ const onCategoryChangeHandler = async (event) => {
 document
   .getElementById("category-select")
   .addEventListener("change", onCategoryChangeHandler);
+
+ //adding event listener for new post submit (including images)
+
+ const form = document.querySelector("#post-form");
+
+ form.addEventListener("submit", submitForm);
+
+ function submitForm(event) {
+  event.preventDefault();
+
+  //const category = document.querySelector("#category-select");
+  const business = document.querySelector("#business-select")
+  const title = document.querySelector("#title");
+  const description = document.querySelector("#description");
+  const file = document.querySelector("#file");
+
+  console.log(file.files);
+
+  const formData = new FormData();
+
+
+  formData.append("business", business.value);
+  formData.append("title", title.value);
+  formData.append("description", description.value);
+  formData.append("file", file.files[0]);
+
+  fetch("/api/posts", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      console.log(response);
+      window.location.reload();
+     
+    })
+    .catch((err) => ("Something went wrong", err));
+}
