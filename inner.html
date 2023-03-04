@@ -1,85 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hey Hater! </title>
     <link rel="stylesheet" href="./public/css/jass.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
-
 <body>
-    <header class="display-flex align-center p-2">
-        <h1 class="align-left">
-            Luv2H8!
-        </h1>
-        <nav>
-            <button class="btn flex-end" id="newPost"> + New Post </button>
-        </nav>
-        <nav>
-            <button class="btn flex-end" id=" category"> Category </button>
-        </nav>
-        <!-- Only display the logout button if the user is logged in -->
-        <!-- {{#if logged_in}} -->
-
-
-        <nav>
-            <button class="btn flex-end" id=" logout">logout</button>
-        </nav>
-        <!-- {{/if}} -->
-    </header>
-
-
-    <main class="container container-fluid mt-5">
-        <!-- {{{ body }}} -->
-        <header class="display-flex justify-space-between align-center p-2">
-            <h2>
-                Horrible Chuck E Cheese Experience
-            </h2>
-            <br>
-            <h3> CreatedBy elena12</h3>
-            <h3> at 2/27/23 7:45pm </h3>
-        </header>
-
-        <div class="row align-left mb-5">
-            <div class="col-md-12">
-                <h2> Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium,
-                    totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit,
-                    sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam
-                    est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam
-                    [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-                    ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-                    ex ea commodi consequatur? [D]Quis autem vel eum i[r]ure reprehenderit, qui in ea voluptate velit
-                    esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla
-                    pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis
-                    praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint,
-                    obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id
-                    est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-                    tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime
-                    placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-                    quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates
-                    repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut
-                    aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-                </h2>
-
+    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="">
+                <!-- <h1>Luv2H8!</h1> -->
+                <img src="./public/css/luv2H2.png" width="" height="">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden=“true”></span>
+                <span aria-hidden=“true”></span>
+                <span aria-hidden=“true”></span>
+            </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/newPost" class="navbar-item" id="newPost">
+                    + New Post
+                </a>
+                <a href="/category" class="navbar-item" id="category">
+                    Category
+                </a>
             </div>
-            <div class="col-md-6">
-                <h4> like 45</h4>
-                <h4> dislikes 2</h4>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-dark" id="ogout">
+                            <strong>Log in</strong>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+    </nav>
+    <!-- <main class=“container container-fluid mt-5"> -->
+    <main>
+        <div class="columns is-mobile is-centered">
+            <div class="column is-11">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-left">
+                            <figure class="image is-64x64">
+                                <img src="" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                                    <br>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet
+                                    massa
+                                    fringilla egestas. Nullam condimentum luctus turpis.
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="reply">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-reply" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <!-- {{{ body }}} -->
+        
+
+        <form class="box shadow" id="post-form">
+            <div class="field">
+          
+            </div>
+          
+          <select name="category" id="category-select">
+            <option value="">Select a Category</option>
+            {{#each categories as |category|}}
+              <option value="{{category.id}}">{{category.name}}</option>
+            {{/each}}
+          </select>
+          
+          <select name="business" id="business-select">
+            <option value="">Select a Business</option>
+          </select>
+          <a href="/newBusiness">Add New Business</a>
+          
+          <div class="field">
+              <label class="label">Title</label>
+              <div class="control">
+                <input id="title" name="title" class="input" type="text" placeholder="Title">
+              </div>
+          </div>
+
+          <div class="field">
+            <label for="description" class="label ">Description</label>
+            <div class="control">
+              <input id="description" name="description" class="input" type="text" placeholder="Your post here">
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="file" class="form-label">Add an Image</label>
+            <input class="form-control" type="file" id="file" name="file" />
+        </div>
+          
+          <button type="submit" class="button is-danger">Submit</button>
+          </form>
+          
+          <script src="/js/post.js"></script>
+
+
+
+
+
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Luv2H8</strong> by <a href="">our names</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
     </footer>
-
     <!-- Only include the logout script if the user is logged in -->
     <!-- {{#if logged_in}} -->
     <script src="/js/logout.js"></script>
     <!-- {{/if}} -->
 </body>
-
 </html>
