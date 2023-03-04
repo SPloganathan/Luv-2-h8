@@ -28,12 +28,12 @@
           aria-expanded="false"
           data-target="navbarBasicExample"
         >
-          <span aria-hidden="“true”"></span>
-          <span aria-hidden="“true”"></span>
-          <span aria-hidden="“true”"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
       </div>
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu" id="navMenu">
         <div class="navbar-start">
           <a href="/newPost" class="navbar-item" id="newPost">
             + New Post
@@ -41,17 +41,26 @@
           <a href="/category" class="navbar-item" id="category">
             Category
           </a>
-          {{#if logged_in}}
-
-            <a href="/myPosts/{{user_id}}" class="btn" id="my-posts">My Posts</a>
-          {{/if}}
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
               <!-- Only display the logout button if the user is logged in -->
               {{#if logged_in}}
-
+                <a
+                  href="/myPosts/{{user_id}}"
+                  class="button is-dark"
+                  id="my-posts"
+                >
+                  <strong>My Posts</strong>
+                </a>
+              {{/if}}
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div class="buttons">
+              <!-- Only display the logout button if the user is logged in -->
+              {{#if logged_in}}
                 <a class="button is-dark" id="logout">
                   <strong>Log Out</strong>
                 </a>
@@ -72,8 +81,20 @@
         <p>
           <strong>Luv2H8</strong>
           by
-          <a href="">our names</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+          <a target="_blank" href="https://github.com/LenaChe2022">Elena
+            Chernousova</a>,
+          <a target="_blank" href="https://github.com/jenjen0219">Jennifer
+            Gutierrez Manjares</a>,
+          <a target="_blank" href="https://github.com/Mayakroe">Maya Roe</a>,
+          <a target="_blank" href="https://github.com/SPloganathan">Sakthi
+            Loganathan</a>.
+          <p>
+            The source code is licensed
+            <a
+              target="_blank"
+              href="http://opensource.org/licenses/mit-license.php"
+            >MIT</a>.
+          </p>
         </p>
       </div>
     </footer>
@@ -81,5 +102,6 @@
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
+    <script src="/js/main.js"></script>
   </body>
 </html>
