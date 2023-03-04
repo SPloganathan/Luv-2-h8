@@ -17,12 +17,18 @@
       <div class="content">
         <p class="card-header-title p-0">{{post.title}}</p>
         <p>{{post.description}}</p>
-        <img src="{{post.image1}}" class="card-img-top" alt="{{post.title}}" />
+        {{#if post.image1}}
+          <img
+            src="{{post.image1}}"
+            class="card-img-top"
+            alt="{{post.title}}"
+          />
+        {{/if}}
       </div>
     </div>
     <footer class="card-footer">
-      <a href="#" class="card-footer-item">like {{post.like_count}}</a>
-      <a href="#" class="card-footer-item">dislikes {{post.dislike_count}}</a>
+      <a href="#" class="card-footer-item">Like {{post.like_count}}</a>
+      <a href="#" class="card-footer-item">Dislikes {{post.dislike_count}}</a>
 
     </footer>
   </div>
