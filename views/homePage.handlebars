@@ -1,6 +1,9 @@
 {{#each posts as |post|}}
 
   <header class="display-flex justify-space-between align-center p-2">
+{{!-- Add an image --}}
+    <img src="{{post.image1}}" class="card-img-top" alt="{{post.title}}" />
+
     <h2>
       {{post.business.name}}
       --
