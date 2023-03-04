@@ -1,29 +1,29 @@
 {{#each posts as |post|}}
+  <div class="card column m-2">
+    <header class="card-header">
+      <p class="card-header-title">
+        {{post.business.name}}
+        -
+        {{post.business.category.name}}
+      </p>
+      <p class="card-header-title is-justify-content-flex-end">Created By
+        {{post.user.name}}
+        at
+        {{format_date post.createdAt}}
+      </p>
 
-  <header class="display-flex justify-space-between align-center p-2">
-{{!-- Add an image --}}
-    <img src="{{post.image1}}" class="card-img-top" alt="{{post.title}}" />
-
-    <h2>
-      {{post.business.name}}
-      --
-      {{post.business.category.name}}
-    </h2>
-    <h2>
-      {{post.title}}
-    </h2>
-    <h3> CreatedBy {{post.user.name}}</h3>
-    <h3> at {{format_date post.createdAt}}</h3>
-  </header>
-
-  <div class="row align-left mb-5">
-    <div class="col-md-12">
-      <h2> {{post.description}}</h2>
-      {{! , , , , like, dislike, images }}
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <p class="card-header-title p-0">{{post.title}}</p>
+        <p>{{post.description}}</p>
+        <img src="{{post.image1}}" class="card-img-top" alt="{{post.title}}" />
+      </div>
     </div>
-    <div class="col-md-6">
-      <h4> like {{post.like_count}}</h4>
-      <h4> dislikes {{post.dislike_count}}</h4>
-    </div>
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item">like {{post.like_count}}</a>
+      <a href="#" class="card-footer-item">dislikes {{post.dislike_count}}</a>
+
+    </footer>
   </div>
 {{/each}}
