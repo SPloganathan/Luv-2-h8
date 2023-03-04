@@ -4,42 +4,58 @@
 
   </div>
 
-<select name="category" id="category-select">
-  <option value="">Select a Category</option>
-  {{#each categories as |category|}}
-    <option value="{{category.id}}">{{category.name}}</option>
-  {{/each}}
-</select>
+  <select name="category" id="category-select">
+    <option value="">Select a Category</option>
+    {{#each categories as |category|}}
+      <option value="{{category.id}}">{{category.name}}</option>
+    {{/each}}
+  </select>
 
-<select name="business" id="business-select">
-  <option value="">Select a Business</option>
-</select>
-{{! placeholder for rendering google map, dont remove it }}
-<div style="width:500px;height:500px" id="map"></div>
+  <select name="business" id="business-select">
+    <option value="">Select a Business</option>
+  </select>
+  {{! placeholder for rendering google map, dont remove it }}
+  <div style="width:500px;height:500px" id="map"></div>
 
-<a href="/newBusiness">Add New Business</a>
+  <a href="/newBusiness">Add New Business</a>
 
-
-<div class="field">
-    <label for="title" class="label ">Title</label>
+  <div class="field">
+    <label for="title" class="label">Title</label>
     <div class="control">
-      <input id="title" name="title" class="input" type="text" placeholder="Title">
+      <input
+        id="title"
+        name="title"
+        class="input"
+        type="text"
+        placeholder="Title"
+      />
     </div>
-</div>
+  </div>
 
-<div class="field">
-    <label for="description" class="label ">Description</label>
+  <div class="field">
+    <label for="description" class="label">Description</label>
     <div class="control">
-      <input id="description" name="description" class="input" type="text" placeholder="Your post here">
+      <input
+        id="description"
+        name="description"
+        class="input"
+        type="text"
+        placeholder="Your post here"
+      />
     </div>
-</div>
+  </div>
 
-<div class="mb-3">
+  <div class="mb-3">
     <label for="file" class="form-label">Add an Image</label>
     <input class="form-control" type="file" id="file" name="file" />
-</div>
+  </div>
 
-<button type="submit" class="button is-danger">Submit</button>
+  <button type="submit" class="button is-danger">Submit</button>
 </form>
 
 <script src="/js/post.js"></script>
+{{! google map scripts }}
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{map_key}}&callback=initMap&v=weekly"
+  defer
+></script>
