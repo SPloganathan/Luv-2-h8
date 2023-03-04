@@ -71,17 +71,17 @@ function codeAddress(event) {
   });
 }
 
- //adding event listener for new post submit (including images)
+//adding event listener for new post submit (including images)
 
- const form = document.querySelector("#post-form");
+const form = document.querySelector("#post-form");
 
- form.addEventListener("submit", submitForm);
+form.addEventListener("submit", submitForm);
 
- function submitForm(event) {
+function submitForm(event) {
   event.preventDefault();
 
   //const category = document.querySelector("#category-select");
-  const business = document.querySelector("#business-select")
+  const business = document.querySelector("#business-select");
   const title = document.querySelector("#title");
   const description = document.querySelector("#description");
   const file = document.querySelector("#file");
@@ -89,7 +89,6 @@ function codeAddress(event) {
   console.log(file.files);
 
   const formData = new FormData();
-
 
   formData.append("business", business.value);
   formData.append("title", title.value);
@@ -102,9 +101,8 @@ function codeAddress(event) {
   })
     .then((response) => {
       console.log(response);
+      alert("Post created successfully");
       window.location.reload();
-     
-
     })
     .catch((err) => ("Something went wrong", err));
 }

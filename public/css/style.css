@@ -26,3 +26,8 @@ form.box {
   margin-bottom: 20px;
   padding: 10px;
 }
+
+.card-img-top {
+  width: 300px;
+  height: 200px;
+}

@@ -1,51 +1,85 @@
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./public/css/jass.css " />
-
     <title>Hey Hater! </title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
-
   <body>
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        Luv2H8!
-      </h1>
-      <nav>
-        <a href="/newPost" class="btn" id="new-post"> + New Post </a>
-      </nav>
-      <nav>
-        <a href="/category" class="btn" id="category"> Category </a>
-      </nav>
+    <nav
+      class="navbar is-danger"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <!-- <h1>Luv2H8!</h1> -->
+          <img src="/image/luv2h8.png" width="" height="" />
+        </a>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="“true”"></span>
+          <span aria-hidden="“true”"></span>
+          <span aria-hidden="“true”"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="/newPost" class="navbar-item" id="newPost">
+            + New Post
+          </a>
+          <a href="/category" class="navbar-item" id="category">
+            Category
+          </a>
+          {{#if logged_in}}
 
-      <!-- Only display the logout button if the user is logged in -->
-      {{#if logged_in}}
-        <nav>
-          <a href="/myPosts/{{user_id}}" class="btn" id="my-posts">My Posts</a>
-        </nav>
-        <nav>
-          <button class="btn" id="logout">logout</button>
-        </nav>
+            <a href="/myPosts/{{user_id}}" class="btn" id="my-posts">My Posts</a>
+          {{/if}}
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <!-- Only display the logout button if the user is logged in -->
+              {{#if logged_in}}
 
-      {{else}}
-        <nav><a href="/login" class="btn" id="login"> Login </a></nav>
-      {{/if}}
-    </header>
+                <a class="button is-dark" id="logout">
+                  <strong>Log Out</strong>
+                </a>
+              {{else}}
+                <a href="/login" class="button is-dark" id="login">
+                  <strong>Log In</strong>
+                </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {{{body}}}
 
-    <main class="container container-fluid mt-5">
-      {{{body}}}
-    </main>
-    <footer>
-
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Luv2H8</strong>
+          by
+          <a href="">our names</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+      </div>
     </footer>
-
     <!-- Only include the logout script if the user is logged in -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
   </body>
-
 </html>
