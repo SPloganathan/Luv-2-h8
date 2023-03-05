@@ -1,11 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey Hater! </title>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+<nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="">
+        <!-- <h1>Luv2H8!</h1> -->
+        <img src="C:\Users\mayar\OneDrive\Pictures\Screenshots\luv-2-h8.png" width="" height="">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="/newPost" class="navbar-item" id="newPost">
+            + New Post
+        </a>
+        <a href="/category" class="navbar-item" id="category">
+            Category
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-dark" id="logout">
+              <strong>Log in</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Restaurant</p>
+            <figure class="image is-4by3">
+                <img src="C:\Users\mayar\OneDrive\Pictures\Screenshots\restaurant.png">
+              </figure>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Gym</p>
+            <figure class="image is-4by3">
+                <img src="C:\Users\mayar\OneDrive\Pictures\Screenshots\gym 2.png">
+              </figure>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Salon</p>
+            <figure class="image is-4by3">
+                <img src="C:\Users\mayar\OneDrive\Pictures\Screenshots\salon.png">
+              </figure>
+            <div class="content">
+            </div>
+          </article>
+        </div>
+      </div>
+  </main>
 <div style="display:flex; width:100%">{{#each categories as |category|}}
     <div>
 
       {{! when Maya add a card pls use the following link to load the card image }}
       <img style="width: 300px;" src={{category.image}} />
-      {{! Maya the below <a></a> - when we click on the acrds the below 'a' tag will open the 'focused categoryview' page }}
+      {{! Maya the below <a></a> - when we click on the cards the below 'a' tag will open the 'focused categoryview' page }}
       <a href="/categoryPosts/{{category.id}}">{{category.name}}</a>
     </div>
 
   {{/each}}
 </div>
+

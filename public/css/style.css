@@ -1,0 +1,9 @@
+body {
+    background-color: black;
+    height: 100vh; 
+  }
+
+  .tile {
+    background-color: lightpink;
+  }
+  
