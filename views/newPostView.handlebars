@@ -22,6 +22,9 @@
    <div class="select is-danger">
     <select name="business" id="business-select">
      <option value="">Select a Business</option>
+     {{#each businesses as |business|}}
+      <option value="{{business.id}}">{{business.name}}</option>
+     {{/each}}
     </select>
    </div>  
  
