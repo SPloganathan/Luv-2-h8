@@ -88,10 +88,18 @@ router.get("/categoryPosts/:id", async (req, res) => {
       ],
     });
 
+    const businessData = await Business.findAll({
+      where: { category_id: req.params.id },
+    });
+
     const posts = postData.map((post) => post.get({ plain: true }));
+    const businesses = businessData.map((business) =>
+      business.get({ plain: true })
+    );
 
     res.render("focusedCategoryView", {
       posts,
+      businesses,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,
     });
@@ -118,7 +126,7 @@ router.get("/myPosts/:id", async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render("focusedCategoryView", {
+    res.render("myPosts", {
       posts,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,
@@ -139,6 +147,7 @@ router.get("/newPost", async (req, res) => {
       categories,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,
+      map_key: process.env.GOOGLE_MAP_API,
     });
   } catch (err) {
     res.status(500).json(err);

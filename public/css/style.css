@@ -7,3 +7,35 @@ body {
     background-color: lightpink;
   }
   
+  background-color: black;
+}
+div.navbar {
+  background-color: red;
+  color: white;
+}
+div.columns {
+  margin-top: 20px;
+}
+div.box {
+  border: 2px solid red;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* css for New Post page */
+form.box {
+  border: 2px solid red;
+  background-color: rgb(97, 28, 89);
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.card-img-top {
+  width: 300px;
+  height: 200px;
+}
