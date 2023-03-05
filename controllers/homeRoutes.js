@@ -27,6 +27,7 @@ router.get("/logout", (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
+      order: [["createdAt", "desc"]],
       include: [
         {
           model: User,
