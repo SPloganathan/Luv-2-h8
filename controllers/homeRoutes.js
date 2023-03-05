@@ -1,4 +1,5 @@
 const { Post, Business, User, Category } = require("../models");
+const withAuth = require("../utils/auth");
 
 const router = require("express").Router();
 
@@ -109,7 +110,7 @@ router.get("/categoryPosts/:id", async (req, res) => {
   }
 });
 // the below route will render the focused category view based on the user ID
-router.get("/myPosts/:id", async (req, res) => {
+router.get("/myPosts/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: { user_id: req.params.id },
@@ -138,7 +139,7 @@ router.get("/myPosts/:id", async (req, res) => {
 });
 
 // the below route will render the 'add new post' page
-router.get("/newPost", async (req, res) => {
+router.get("/newPost", withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll();
 
@@ -156,7 +157,7 @@ router.get("/newPost", async (req, res) => {
 });
 
 // the below route will render the 'add new business' page
-router.get("/newBusiness", async (req, res) => {
+router.get("/newBusiness", withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll();
 
