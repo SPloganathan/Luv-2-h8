@@ -1,26 +1,46 @@
 {{! below needs to be always kept as dropdown option for category }}
 <form class="box" id="post-form">
-  <div class="field">
+  {{!-- <div class="field">
+
+  </div> --}}
+
+
+  <div class="level">
+  
+  <div class="level-left">
+
+   <div class="select is-danger">
+    <select class="is-focused" name="category" id="category-select">
+     <option value="">Select a Category</option>
+     {{#each categories as |category|}}
+      <option value="{{category.id}}">{{category.name}}</option>
+     {{/each}}
+    </select>
+   </div>
+  
+ 
+   <div class="select is-danger">
+    <select name="business" id="business-select">
+     <option value="">Select a Business</option>
+    </select>
+   </div>  
+ 
+  <a class="button is-danger" href="/newBusiness">Add New Business</a>
+  
+</div>
+
+  {{! placeholder for rendering google map, dont remove it }}
+  <div class="level-right">
+
+  <div style="width:300px;height:300px" id="map"></div>
 
   </div>
 
-  <select name="category" id="category-select">
-    <option value="">Select a Category</option>
-    {{#each categories as |category|}}
-      <option value="{{category.id}}">{{category.name}}</option>
-    {{/each}}
-  </select>
 
-  <select name="business" id="business-select">
-    <option value="">Select a Business</option>
-  </select>
-  {{! placeholder for rendering google map, dont remove it }}
-  <div style="width:500px;height:500px" id="map"></div>
-
-  <a href="/newBusiness">Add New Business</a>
+  </div>
 
   <div class="field">
-    <label for="title" class="label">Title</label>
+    <label for="title" class="form-label">Title</label>
     <div class="control">
       <input
         id="title"
@@ -33,7 +53,7 @@
   </div>
 
   <div class="field">
-    <label for="description" class="label">Description</label>
+    <label for="description" class="form-label">Description</label>
     <div class="control">
       <input
         id="description"
@@ -46,11 +66,13 @@
   </div>
 
   <div class="mb-3">
-    <label for="file" class="form-label">Add an Image</label>
+    <label for="file" class="form-label button is-danger">Add an Image</label>
     <input class="form-control" type="file" id="file" name="file" />
   </div>
 
-  <button type="submit" class="button is-danger">Submit</button>
+
+
+  <button type="submit" class="button is-danger is-large">Submit</button>
 </form>
 
 <script src="/js/post.js"></script>
