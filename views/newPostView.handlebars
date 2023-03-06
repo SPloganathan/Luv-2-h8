@@ -11,7 +11,8 @@
 
       <div class="block">
 
-       <div class="select is-danger">
+      <div class="block"> 
+       <div class="select is-danger is-large">
          <select class="is-focused is-3" name="category" id="category-select">
           <option value="">Select a Category</option>
           {{#each categories as |category|}}
@@ -19,17 +20,34 @@
           {{/each}}
          </select>
        </div>
-  
-       <div class="select is-danger">
+      </div> 
+
+      <div class="block">  
+        <div class="select is-danger is-large">
         <select name="business" id="business-select">
          <option value="">Select a Business</option>
          {{#each businesses as |business|}}
          <option value="{{business.id}}">{{business.name}}</option>
          {{/each}}
         </select>
-       </div>  
- 
-       <a class="button is-danger" href="/newBusiness">Add New Business</a>
+        </div>
+      </div> 
+
+      <div class="block">   
+       <a class="button is-danger is-large" href="/newBusiness"> + Add New Business</a>
+      </div>
+
+      <div class="block">   
+       <h1> </h1>
+      </div>
+
+      <div class="block">   
+       <h1 class="title is-1 is-black"> </h1>
+      </div>
+
+      <div class="block">   
+       <h1 class="title is-3 tag is-black">Vent Here:</h1>
+      </div>
 
      </div>  
 
@@ -38,14 +56,14 @@
   {{! placeholder for rendering google map, dont remove it }}
   <div class="level-right">
       <div class="box">
-        <div style="width:400px;height:400px" id="map"></div>
+        <div style="width:300px;height:300px" id="map"></div>
       </div>
   </div>
 
 
   </div>
 
-  <div class="field">
+  <div class="field is-large">
     <label for="title" class="form-label">Title</label>
     <div class="control">
       <input
