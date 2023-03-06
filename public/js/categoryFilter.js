@@ -5,9 +5,9 @@ const onChangeListener = (event) => {
   let checkedBusiness = [];
   let categoryId = "";
   document.querySelectorAll("#business-id").forEach((inputElement) => {
+    categoryId = inputElement.getAttribute("data-category-id");
     if (inputElement.checked) {
       const id = inputElement.getAttribute("data-id");
-      categoryId = inputElement.getAttribute("data-category-id");
       checkedBusiness.push(id);
     }
   });
@@ -15,6 +15,8 @@ const onChangeListener = (event) => {
     document.location.replace(
       `/categoryPosts/${categoryId}?business=${checkedBusiness.join(",")}`
     );
+  } else {
+    document.location.replace(`/categoryPosts/${categoryId}`);
   }
 };
 
