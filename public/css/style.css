@@ -35,3 +35,11 @@ form.box {
 .visibility-hidden {
   visibility: hidden;
 }
+
+.color-white {
+  color: white !important;
+}
+
+.footer {
+  margin-top: 32vh !important;
+}
