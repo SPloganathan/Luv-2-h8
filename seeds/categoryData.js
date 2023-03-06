@@ -20,6 +20,11 @@ const categoryData = [
     image:
       "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
+  {
+    name: "Supermarket",
+    image:
+      "https://images.pexels.com/photos/5632346/pexels-photo-5632346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
 ];
 
 const seedCategory = () => Category.bulkCreate(categoryData);

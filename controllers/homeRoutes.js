@@ -1,4 +1,5 @@
 const { Post, Business, User, Category } = require("../models");
+const withAuth = require("../utils/auth");
 
 const router = require("express").Router();
 
@@ -27,6 +28,7 @@ router.get("/logout", (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
+      order: [["createdAt", "desc"]],
       include: [
         {
           model: User,
@@ -74,21 +76,49 @@ router.get("/category", async (req, res) => {
 
 router.get("/categoryPosts/:id", async (req, res) => {
   try {
-    const postData = await Post.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        {
-          model: Business,
-          include: [Category],
-          where: { category_id: req.params.id },
-        },
-      ],
-    });
+    let postData = "";
+    let queryBusiness = [];
+    if (req.query.business) {
+      queryBusiness = req.query.business.split(",");
+      postData = await Post.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ["name"],
+          },
+          {
+            model: Business,
+            include: [Category],
+            where: {
+              category_id: req.params.id,
+              id: queryBusiness,
+            },
+          },
+        ],
+      });
+    } else {
+      postData = await Post.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ["name"],
+          },
+          {
+            model: Business,
+            include: [Category],
+            where: { category_id: req.params.id },
+          },
+        ],
+      });
+    }
 
     const businessData = await Business.findAll({
+      include: [
+        {
+          model: Category,
+          attributes: ["id", "name"],
+        },
+      ],
       where: { category_id: req.params.id },
     });
 
@@ -100,6 +130,7 @@ router.get("/categoryPosts/:id", async (req, res) => {
     res.render("focusedCategoryView", {
       posts,
       businesses,
+      queryBusiness,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,
     });
@@ -108,7 +139,7 @@ router.get("/categoryPosts/:id", async (req, res) => {
   }
 });
 // the below route will render the focused category view based on the user ID
-router.get("/myPosts/:id", async (req, res) => {
+router.get("/myPosts/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: { user_id: req.params.id },
@@ -137,7 +168,7 @@ router.get("/myPosts/:id", async (req, res) => {
 });
 
 // the below route will render the 'add new post' page
-router.get("/newPost", async (req, res) => {
+router.get("/newPost", withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll();
 
@@ -155,7 +186,7 @@ router.get("/newPost", async (req, res) => {
 });
 
 // the below route will render the 'add new business' page
-router.get("/newBusiness", async (req, res) => {
+router.get("/newBusiness", withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll();
 
