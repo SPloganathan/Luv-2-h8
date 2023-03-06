@@ -41,10 +41,12 @@ In this application we fulfil the following requirements:
 - [License](#license)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Deployed](#deployed)
 
 ## Installation
 
 To run this app follow steps:
+
 * clone the repo to your computer;
 * The application have additional packages (Sequelize, Cloudinary, Google Maps, ....) and the password and keys will be needed to run it.
 Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
@@ -54,22 +56,29 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 * mysql -u root -p
 * then enter your SQL password
 * enter "sourse schema.sql" in mysql CLI to create working DataBase;
-* enter "USE review_db;" in mysql CLI to use that DataBase;
 * print "quit" to exit mySQL and come back to your CLI.
 * The application will be invoked by using the following command in the Command line: node server.js.
 * While invoked, the server is listenning in lockalhost. To stop listening enter in CLI this key combination: "control" + "C".
 
-
-
-
 ## Usage
 
-...
+* On starting the application, we are presented with a homepage, which includes existing posts if any has been posted; navbar with New Post, Category, Login and My Post if the user is logged in.
+* The posts in the home page can only be viewed by the user if not logged in.
+* On clicking the New Post or Login button in the navbar the user is automatically redirected to Login or Sign Up page.
+* The login can also be done using Google authentication.
+* Once the user is logged in, the user can click on the New Post to add a new post.
+* The user can also add a new business by clicking the New Business button.
+* The user can view location in the google map when adding a new post.
+* On clicking the Category button in the navbar, the user can select a category and the user will be redirected to the respective category page.
+* The user can use the filter option provided in the category page.
+* When the user is logged in, the user can click on the My Post button to view all the posts created by the user.
 
 ## Credits
 
-N/A
-
+* Sakthipriya Loganathan
+* Elena Chernousova
+* Jennifer Gutierrez Manjares
+* Maya Roe
 
 ## License
   
@@ -80,9 +89,11 @@ N/A
 
 N/A
 
+## Deployed
+
+The deployed link for this application is - 
+
 ## Questions
 
-GitHub profile: https://github.com/SPloganathan
-
-With additional questions contact me by email:
+If you have any questions about this repo, open an issue.
 ....

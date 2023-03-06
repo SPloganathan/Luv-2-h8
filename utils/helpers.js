@@ -9,9 +9,9 @@ module.exports = {
   },
   ifIn: (value, arrayElements) => {
     if (arrayElements.indexOf(value.toString()) > -1) {
-      return true;
+      return "checked";
     } else {
-      return false;
+      return "";
     }
   },
 };
