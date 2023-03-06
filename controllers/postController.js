@@ -21,7 +21,7 @@ const createPost = async (req, res) => {
     // upload the image to cloudinary
     let image = null;
     if (imagePath) {
-      image = await cloudinary.uploader.upload(imagePath);
+      image = await cloudinary.uploader.upload(imagePath, {effect: "pixelate_faces:30"});
     }
 
     // create the post on my database

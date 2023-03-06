@@ -2,15 +2,29 @@
 
 <form class="box" id="business-form">
 
-  <div class="block">
-    <div class="select field block is-danger">
-      {{! <label for="category" class="form-label">Category</label> }}
-      <select class="is-focused" name="category" id="category-select">
-        <option value="">Select a Category</option>
-        {{#each categories as |category|}}
-          <option value="{{category.id}}">{{category.name}}</option>
-        {{/each}}
-      </select>
+<div class="block">
+<div class="select field block is-danger">
+  {{!-- <label for="category" class="form-label">Category</label> --}}
+    <select class="is-focused" name="category" id="category-select">
+     <option value="">Select a Category</option>
+     {{#each categories as |category|}}
+      <option value="{{category.id}}">{{category.name}}</option>
+     {{/each}}
+    </select>
+</div>
+</div>
+
+<div class="block">
+ <div class="field block">
+    <label for="name" class="form-label is-large">Business Name</label>
+    <div class="control">
+      <input
+        id="name"
+        name="name"
+        class="input"
+        type="text"
+        placeholder="Business Name"
+      />
     </div>
   </div>
 
