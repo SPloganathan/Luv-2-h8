@@ -31,3 +31,7 @@ form.box {
   width: 300px;
   height: 200px;
 }
+
+.visibility-hidden {
+  visibility: hidden;
+}

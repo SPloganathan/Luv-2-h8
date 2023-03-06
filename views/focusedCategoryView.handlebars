@@ -6,11 +6,17 @@
           Search By Business Name
         </p>
       </header>
-      <div class="card-content">
+      <div class="card-content" id="card-filter">
         {{#each businesses as |business|}}
           <div class="content">
             <label class="checkbox">
-              <input type="checkbox" />
+              <input
+                id="business-id"
+                type="checkbox"
+                data-id={{business.id}}
+                data-category-id={{business.category.id}}
+                {{#ifIn business.id ../queryBusiness}} checked {{/ifIn}}
+              />
               {{business.name}}
             </label>
           </div>
@@ -57,3 +63,4 @@
     {{/each}}
   </div>
 </div>
+<script src="/js/categoryFilter.js"></script>

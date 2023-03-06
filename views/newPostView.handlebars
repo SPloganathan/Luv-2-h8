@@ -1,44 +1,38 @@
 {{! below needs to be always kept as dropdown option for category }}
 <form class="box" id="post-form">
-  {{!-- <div class="field">
-
-  </div> --}}
-
 
   <div class="level">
-  
-  <div class="level-left">
 
-   <div class="select is-danger">
-    <select class="is-focused" name="category" id="category-select">
-     <option value="">Select a Category</option>
-     {{#each categories as |category|}}
-      <option value="{{category.id}}">{{category.name}}</option>
-     {{/each}}
-    </select>
-   </div>
-  
- 
-   <div class="select is-danger">
-    <select name="business" id="business-select">
-     <option value="">Select a Business</option>
-     {{#each businesses as |business|}}
-      <option value="{{business.id}}">{{business.name}}</option>
-     {{/each}}
-    </select>
-   </div>  
- 
-  <a class="button is-danger" href="/newBusiness">Add New Business</a>
-  
-</div>
+    <div class="level-left">
 
-  {{! placeholder for rendering google map, dont remove it }}
-  <div class="level-right">
+      <div class="select is-danger mr-4">
+        <select class="is-focused" name="category" id="category-select">
+          <option value="">Select a Category</option>
+          {{#each categories as |category|}}
+            <option value="{{category.id}}">{{category.name}}</option>
+          {{/each}}
+        </select>
+      </div>
 
-  <div style="width:300px;height:300px" id="map"></div>
+      <div class="select is-danger mr-4">
+        <select name="business" id="business-select">
+          <option value="">Select a Business</option>
+          {{#each businesses as |business|}}
+            <option value="{{business.id}}">{{business.name}}</option>
+          {{/each}}
+        </select>
+      </div>
 
-  </div>
+      <a class="button is-danger" href="/newBusiness">Add New Business</a>
 
+    </div>
+
+    {{! placeholder for rendering google map, dont remove it }}
+    <div class="level-right">
+
+      <div style="width:300px;height:300px" id="map"></div>
+
+    </div>
 
   </div>
 
@@ -58,22 +52,25 @@
   <div class="field">
     <label for="description" class="form-label">Description</label>
     <div class="control">
-      <input
+      <textarea
         id="description"
         name="description"
-        class="input"
+        class="textarea"
         type="text"
         placeholder="Your post here"
-      />
+      ></textarea>
     </div>
   </div>
 
   <div class="mb-3">
     <label for="file" class="form-label button is-danger">Add an Image</label>
-    <input class="form-control" type="file" id="file" name="file" />
+    <input
+      class="form-control visibility-hidden"
+      type="file"
+      id="file"
+      name="file"
+    />
   </div>
-
-
 
   <button type="submit" class="button is-danger is-large">Submit</button>
 </form>

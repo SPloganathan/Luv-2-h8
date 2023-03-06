@@ -1,11 +1,14 @@
-<div style="display:flex; width:100%">{{#each categories as |category|}}
-    <div>
-
-      {{! when Maya add a card pls use the following link to load the card image }}
-      <img style="width: 300px;" src={{category.image}} />
-      {{! Maya the below <a></a> - when we click on the acrds the below 'a' tag will open the 'focused categoryview' page }}
-      <a href="/categoryPosts/{{category.id}}">{{category.name}}</a>
+<div class="columns is-multiline">
+  {{#each categories as |category|}}
+    <div class="column is-4">
+      <a href="/categoryPosts/{{category.id}}">
+        <article class="tile is-child box">
+          <p class="title">{{category.name}}</p>
+          <figure class="image is-4by3">
+            <img src={{category.image}} />
+          </figure>
+        </article>
+      </a>
     </div>
-
   {{/each}}
 </div>

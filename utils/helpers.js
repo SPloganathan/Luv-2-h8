@@ -7,4 +7,11 @@ module.exports = {
       date
     ).getHours()}:${new Date(date).getMinutes()}`;
   },
+  ifIn: (value, arrayElements) => {
+    if (arrayElements.indexOf(value.toString()) > -1) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 };
