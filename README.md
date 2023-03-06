@@ -37,11 +37,13 @@ In this application we fulfil the following requirements:
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Built Using](#built-using)
 - [Credits](#credits)
 - [License](#license)
 - [Tests](#tests)
 - [Questions](#questions)
 - [Deployed](#deployed)
+
 
 ## Installation
 
@@ -73,12 +75,31 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 * The user can use the filter option provided in the category page.
 * When the user is logged in, the user can click on the My Post button to view all the posts created by the user.
 
+## Built Using
+
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* MySQL
+* Sequelize
+* Handlebars.js
+* Node.js
+* Express
+* Dotenv
+* Bycrypt
+* Heroku
+* GitHub
+* Passport.js
+* Cloudinary
+* Google Maps API
+
 ## Credits
 
-* Sakthipriya Loganathan
-* Elena Chernousova
-* Jennifer Gutierrez Manjares
-* Maya Roe
+* Sakthipriya Loganathan [@sploganathan](https://github.com/sploganathan)
+* Elena Chernousova [@LenaChe2022](https://github.com/LenaChe2022)
+* Jennifer Gutierrez Manjares[@jenjen0219](https://github.com/jenjen0219)
+* Maya Roe[@Mayakroe](https://github.com/Mayakroe)
 
 ## License
   
