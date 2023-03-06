@@ -1,98 +1,95 @@
-
-
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 
-<form class="box" id="post-form">
+<form class="box" id="business-form">
 
-<div class="block">
-<div class="select field block is-danger">
-  {{!-- <label for="category" class="form-label">Category</label> --}}
-    <select class="is-focused" name="category" id="category-select">
-     <option value="">Select a Category</option>
-     {{#each categories as |category|}}
-      <option value="{{category.id}}">{{category.name}}</option>
-     {{/each}}
-    </select>
-</div>
-</div>
-
-<div class="block">
- <div class="field block">
-    <label for="name" class="form-label">Business Name</label>
-    <div class="control">
-      <input
-        id="name"
-        name="name"
-        class="input"
-        type="text"
-        placeholder="Business Name"
-      />
+  <div class="block">
+    <div class="select field block is-danger">
+      {{! <label for="category" class="form-label">Category</label> }}
+      <select class="is-focused" name="category" id="category-select">
+        <option value="">Select a Category</option>
+        {{#each categories as |category|}}
+          <option value="{{category.id}}">{{category.name}}</option>
+        {{/each}}
+      </select>
     </div>
   </div>
-</div>
 
-<div class="block">
- <div class="field block">
-    <label for="address" class="form-label">Adress</label>
-    <div class="control">
-      <input
-        id="address"
-        name="address"
-        class="input"
-        type="text"
-        placeholder="Street, house, bld, unit"
-      />
+  <div class="block">
+    <div class="field block">
+      <label for="name" class="form-label">Business Name</label>
+      <div class="control">
+        <input
+          id="name"
+          name="name"
+          class="input"
+          type="text"
+          placeholder="Business Name"
+        />
+      </div>
     </div>
   </div>
-</div>
 
-<div class="block">
- <div class="field block">
-    <label for="city" class="form-label">City</label>
-    <div class="control">
-      <input
-        id="locality"
-        name="city"
-        class="input"
-        type="text"
-        placeholder="City"
-      />
+  <div class="block">
+    <div class="field block">
+      <label for="address" class="form-label">Adress</label>
+      <div class="control">
+        <input
+          id="address"
+          name="address"
+          class="input"
+          type="text"
+          placeholder="Street, house, bld, unit"
+        />
+      </div>
     </div>
   </div>
-</div>
 
-<div class="block">
- <div class="field block">
-    <label for="state" class="form-label">State</label>
-    <div class="control">
-      <input
-        id="administrative_area_level_1"
-        name="state"
-        class="input"
-        type="text"
-        placeholder="WA"
-      />
+  <div class="block">
+    <div class="field block">
+      <label for="city" class="form-label">City</label>
+      <div class="control">
+        <input
+          id="locality"
+          name="city"
+          class="input"
+          type="text"
+          placeholder="City"
+        />
+      </div>
     </div>
   </div>
-</div>
 
-<div class="block">
- <div class="field block">
-    <label for="postal_code" class="form-label">Postal Code</label>
-    <div class="control">
-      <input
-        id="postal_code"
-        name="postal_code"
-        class="input"
-        type="text"
-        placeholder="98051"
-      />
+  <div class="block">
+    <div class="field block">
+      <label for="state" class="form-label">State</label>
+      <div class="control">
+        <input
+          id="administrative_area_level_1"
+          name="state"
+          class="input"
+          type="text"
+          placeholder="WA"
+        />
+      </div>
     </div>
   </div>
-</div>
 
+  <div class="block">
+    <div class="field block">
+      <label for="postal_code" class="form-label">Postal Code</label>
+      <div class="control">
+        <input
+          id="postal_code"
+          name="postal_code"
+          class="input"
+          type="text"
+          placeholder="98051"
+        />
+      </div>
+    </div>
+  </div>
 
-<button type="submit" class="button is-danger is-large block">Add</button>
+  <button type="submit" class="button is-danger is-large block">Add</button>
 
 </form>
 
