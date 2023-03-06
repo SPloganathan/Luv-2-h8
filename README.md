@@ -54,6 +54,7 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 * mysql -u root -p
 * then enter your SQL password
 * enter "sourse schema.sql" in mysql CLI to create working DataBase;
+* enter "USE review_db;" in mysql CLI to use that DataBase;
 * print "quit" to exit mySQL and come back to your CLI.
 * The application will be invoked by using the following command in the Command line: node server.js.
 * While invoked, the server is listenning in lockalhost. To stop listening enter in CLI this key combination: "control" + "C".
