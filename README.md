@@ -38,6 +38,7 @@ In this application we fulfil the following requirements:
 - [Installation](#installation)
 - [Usage](#usage)
 - [Built Using](#built-using)
+- [Future Development](#future-development)
 - [Credits](#credits)
 - [License](#license)
 - [Tests](#tests)
@@ -93,6 +94,14 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 * Passport.js
 * Cloudinary
 * Google Maps API
+
+## Future Development
+
+* Comment section
+* Sharing posts
+* Dropzone.js
+* More authentication
+* User based like/dislike
 
 ## Credits
 
