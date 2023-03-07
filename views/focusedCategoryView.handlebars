@@ -53,14 +53,26 @@
             {{/if}}
           </div>
         </div>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item">Like {{post.like_count}}</a>
-          <a href="#" class="card-footer-item">Dislikes
-            {{post.dislike_count}}</a>
+         <footer class="card-footer">
+      <a
+        href="#"
+        class="card-footer-item"
+        id="post-like"
+        data-post-id={{post.id}}
+        data-post-type="like"
+      >Like {{post.like_count}}</a>
+      <a
+        href="#"
+        class="card-footer-item"
+        id="post-like"
+        data-post-id={{post.id}}
+        data-post-type="dislike"
+      >Dislikes {{post.dislike_count}}</a>
 
-        </footer>
+    </footer>
       </div>
     {{/each}}
   </div>
 </div>
 <script src="/js/categoryFilter.js"></script>
+<script src="/js/home.js"></script>
