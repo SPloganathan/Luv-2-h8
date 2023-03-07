@@ -42,7 +42,8 @@ User.init(
     hooks: {
       // on every user creation,encrypting the password using bcrypt
       beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        if (newUserData.password)
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
     },

@@ -27,6 +27,15 @@ router.get("/logout", (req, res) => {
 // this will render the homepage view
 router.get("/", async (req, res) => {
   try {
+    //  setting session when sigin with google
+    let userId = null;
+    if (req?.user?.dataValues?.id && !req.session.user_id) {
+      userId = req.user.dataValues.id;
+      req.session.save(() => {
+        req.session.user_id = req.user.dataValues.id;
+        req.session.logged_in = true;
+      });
+    }
     const postData = await Post.findAll({
       order: [["createdAt", "desc"]],
       include: [
@@ -45,8 +54,8 @@ router.get("/", async (req, res) => {
 
     res.render("homePage", {
       posts,
-      logged_in: req.session.logged_in,
-      user_id: req.session.user_id,
+      logged_in: userId ? true : req.session.logged_in,
+      user_id: userId ?? req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -130,7 +139,7 @@ router.get("/categoryPosts/:id", async (req, res) => {
     res.render("focusedCategoryView", {
       posts,
       businesses,
-      queryBusiness,
+      queryBusiness: queryBusiness,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,
     });
