@@ -80,7 +80,7 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 
 * HTML
 * CSS
-* Bootstrap
+* Bulma
 * JavaScript
 * MySQL
 * Sequelize
