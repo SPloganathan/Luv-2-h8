@@ -1,41 +1,54 @@
 {{! login and sign up page }}
-<div class="columns m-4">
-  <div class="column is-6">
-    <div class="tile is-child box login-card">
-      <h2 class="title is-2 color-white">Login</h2>
-      <form class="form login-form">
-        <div class="field is-large">
-          <label for="email-login" class="form-label">Email address</label>
-          <input type="email" class="input" id="email-login" />
-        </div>
-        <div class="field is-large">
-          <label for="password-login" class="form-label">Password</label>
-          <input type="password" class="input" id="password-login" />
-        </div>
-        <button class="button is-danger is-large" type="submit">Login</button>
-      </form>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="login-card">
+        <h2 class="page-title">Login</h2>
+        <form class="form login-form">
+          <div class="mb-3">
+            <label for="email-login" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email-login" />
+
+          </div>
+          <div class="mb-3">
+            <label for="password-login" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password-login" />
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-dark" type="submit">Login</button>
+          </div>
+        </form>
+        <form class="text-center" action="/auth/google" method="get">
+          <button class="btn btn-primary btn-block my-2" type="submit">
+            Sign in with Google
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="column is-6">
-    <div class="tile is-child box login-card">
-      <h2 class="title is-2 color-white">Signup</h2>
-      <form class="form signup-form">
-        <div class="field is-large">
-          <label for="username-signup" class="form-label">Username</label>
-          <input type="text" class="input" id="username-signup" />
-        </div>
-        <div class="field is-large">
-          <label for="email-signup" class="form-label">Email address</label>
-          <input type="email" class="input" id="email-signup" />
-        </div>
-        <div class="field is-large">
-          <label for="password-signup" class="form-label">Password</label>
-          <input type="password" class="input" id="password-signup" />
-        </div>
-        <div class="form-group">
-          <button class="button is-danger is-large" type="submit">Sign Up</button>
-        </div>
-      </form>
+    <div class="col">
+      <div class="login-card">
+        <h2 class="page-title">Signup</h2>
+        <form class="form signup-form">
+          <div class="mb-3">
+            <label for="username-signup" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username-signup" />
+
+          </div>
+          <div class="mb-3">
+            <label for="email-signup" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email-signup" />
+
+          </div>
+          <div class="mb-3">
+            <label for="password-signup" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password-signup" />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-dark" type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
