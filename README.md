@@ -123,6 +123,8 @@ N/A
 
 The deployed link for this application is - 
 
+## https://luv-2-h8.herokuapp.com/
+
 ## Questions
 
 If you have any questions about this repo, open an issue.
