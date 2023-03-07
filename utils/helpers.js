@@ -3,10 +3,9 @@ module.exports = {
   format_date: (date) => {
     return `${new Date(date).getMonth()}/${new Date(date).getDate()}/${new Date(
       date
-    ).getFullYear()} ${new Date(date).getHours()}:${new Date(
-      date
-    ).getMinutes()}`;
+    ).getFullYear()}`;
   },
+
   ifIn: (value, arrayElements) => {
     if (arrayElements.indexOf(value.toString()) > -1) {
       return "checked";
