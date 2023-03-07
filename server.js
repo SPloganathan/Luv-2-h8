@@ -5,7 +5,10 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");
-
+const passport = require("passport");
+const flash = require("express-flash");
+require("./config/google");
+require("./config/passport");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -36,8 +39,26 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(routes);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
+);
 
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/",
+    successRedirect: "/",
+    failureFlash: true,
+    successFlash: "Successfully logged in!",
+  })
+);
+app.use(routes);
 // Initializing sequelize with express
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
