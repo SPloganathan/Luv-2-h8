@@ -29,7 +29,8 @@ router.get("/", async (req, res) => {
   try {
     //  setting session when sigin with google
     let userId = null;
-    if (req?.user?.dataValues?.id && !req.session.user_id) {
+    console.log(req?.user?.dataValues);
+    if (req?.user?.dataValues?.id) {
       userId = req.user.dataValues.id;
       req.session.save(() => {
         req.session.user_id = req.user.dataValues.id;

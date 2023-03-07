@@ -80,7 +80,7 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 
 * HTML
 * CSS
-* Bootstrap
+* Bulma
 * JavaScript
 * MySQL
 * Sequelize
@@ -122,6 +122,8 @@ N/A
 ## Deployed
 
 The deployed link for this application is - 
+
+## https://luv-2-h8.herokuapp.com/
 
 ## Questions
 
