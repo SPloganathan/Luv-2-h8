@@ -1,3 +1,4 @@
+// call back for getting the filtered posts based on business id
 const onChangeListener = (event) => {
   if (!event.target.tagName.toUpperCase() == "INPUT") {
     return;

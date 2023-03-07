@@ -1,26 +1,3 @@
-// adding event listiner for category dropdown to fetch the category details based on the selection
-// document
-//   .getElementById("category-select")
-//   .addEventListener("change", onCategoryChangeHandler);
-
-//Coppied this from newPost to try add address using a map
-// Google map API
-// global map variables
-var geocoder;
-var map;
-// below will be used to display the map on page load
-function initMap() {
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(38.0902, -105.7129);
-  var mapOptions = {
-    zoom: 4,
-    center: latlng,
-  };
-  map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-
-//TODO - add function wich will render the marker on map when new address added
-
 //adding event listener for new business submit
 const form = document.querySelector("#business-form");
 form.addEventListener("submit", submitForm);
