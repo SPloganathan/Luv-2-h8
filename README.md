@@ -2,8 +2,8 @@
 
 ## Description
 
-This is an Interactive Full-Stack Application for creating posts/reviews with complaints regarding any place or business.
-Our motivation was to practice our collaborative skills, coding abilitiesthe and knowlege we've got during the past six modules of the boot camp to create a real-world full-stack application.
+This is an Interactive Full-Stack Application for creating negative posts/reviews with complaints regarding any place or business.
+Our motivation was to practice our collaborative skills, coding abilitiesthe and knowlege we've built the past six modules of the boot camp to create a real-world full-stack application.
 The aim was to create a blog sitesimilar to Yelp, where users can publish a claim to anything - this is world for the real "haters". So other haters/users could look through the blog and give likes/dislikes to the posts.
 In this application we fulfil the following requirements:
 
@@ -65,15 +65,28 @@ Rename `.env.EXAMPLE` file into `.env` and add all your the keys and passwords.
 
 ## Usage
 
+![homepage](./public/image/landing_page.png)
 * On starting the application, we are presented with a homepage, which includes existing posts if any has been posted; navbar with New Post, Category, Login and My Post if the user is logged in.
+
+![login_signup](./public/image/login_signup.png)
 * The posts in the home page can only be viewed by the user if not logged in.
 * On clicking the New Post or Login button in the navbar the user is automatically redirected to Login or Sign Up page.
 * The login can also be done using Google authentication.
+
+![new_post](./public/image/post_creation.png)
 * Once the user is logged in, the user can click on the New Post to add a new post.
+
+![adding a business](./public/image/adding_business.png)
 * The user can also add a new business by clicking the New Business button.
 * The user can view location in the google map when adding a new post.
+
+![categories](./public/image/category.png)
 * On clicking the Category button in the navbar, the user can select a category and the user will be redirected to the respective category page.
+
+![filtered category](./public/image/filtered_category.png)
 * The user can use the filter option provided in the category page.
+
+![my posts](./public/image/my_posts.png)
 * When the user is logged in, the user can click on the My Post button to view all the posts created by the user.
 
 ## Built Using
